@@ -1,1 +1,49 @@
+# Node.js
 node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+logs/*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Directorios de sistema
+.DS_Store
+Thumbs.db
+
+# Entornos de configuración
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dependencias y compilaciones
+/vendor/
+build/
+dist/
+coverage/
+.cache/
+public/
+
+# Editor de texto y configuraciones de IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos temporales
+*.tmp
+*.swp
+*.bak
+*.backup
+*.orig
+*.sass-cache
+*.log
+
+

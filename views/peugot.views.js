@@ -33,6 +33,18 @@ export const crearPagina = (title, contenido) => {
 
 export const todosLosAutos = (autos) => {
     for(let auto in autos){
-        
+        const html = `
+            <div>
+                <div class="img">
+                    <img src="" alt="" />
+                </div>
+                <h2> ${auto.name} </h2>
+                <div class="text">
+                    <p>${auto.description}</p>
+                    <p>${auto.price}</p>
+                </div>
+                <a href="/peugot/:id">Ver mas</a> 
+            </div>
+        `
     }
 }
