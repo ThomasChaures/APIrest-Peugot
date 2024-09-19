@@ -12,7 +12,10 @@ export const crearPagina = (title, contenido) => {
       <nav>
         <ul>
           <li><a href="/peugot">Vehículos</a></li>
-          <li><a href="/peugot/types">Tipos de Vehículo</a></li>
+          <li><a href="/peugot/types/hatchback">Hatchback</a></li>
+          <li><a href="/peugot/types/suv">SUV</a></li>
+          <li><a href="/peugot/types/sedan">Sedan</a></li>
+          <li><a href="/peugot/types/mvp">MVP</a></li>
         </ul>
       </nav>
 
@@ -36,14 +39,15 @@ export const todosLosAutos = (autos) => {
         const html = `
             <div>
                 <div class="img">
-                    <img src="" alt="" />
+                    <img src="../${auto.img}" alt="Imagen de ${auto.name}" />
                 </div>
                 <h2> ${auto.name} </h2>
                 <div class="text">
-                    <p>${auto.description}</p>
-                    <p>${auto.price}</p>
+                    <p>Modelo: ${auto.modelo}</p>
+                    <p>Descripcion: ${auto.description}</p>
+                    <p>Precio: ${auto.price}</p>
                 </div>
-                <a href="/peugot/:id">Ver mas</a> 
+                <a href="/peugot/${auto.id}">Ver mas</a> 
             </div>
         `
     }
