@@ -1,0 +1,24 @@
+{
+  "name": "apipeugot",
+  "version": "1.0.0",
+  "description": "ApiRest sobre Peugot",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomasChaures/APIrest-Peugot.git"
+  },
+  "author": "Thomas Chaures",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomasChaures/APIrest-Peugot/issues"
+  },
+  "homepage": "https://github.com/ThomasChaures/APIrest-Peugot#readme",
+  "dependencies": {
+    "express": "^4.21.0",
+    "nodemon": "^3.1.6"
+  }
+}

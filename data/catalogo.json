@@ -1,0 +1,66 @@
+[
+    {
+      "model": "208",
+      "year": 2024,
+      "type": "Hatchback",
+      "engine": "1.2L PureTech",
+      "horsepower": 100,
+      "description": "El Peugeot 208 es un hatchback compacto, elegante y eficiente, ideal para la conducción urbana con tecnología avanzada.",
+      "img": "https://example.com/images/peugeot_208_2024.jpg"
+    },
+    {
+      "model": "308",
+      "year": 2024,
+      "type": "Hatchback",
+      "engine": "1.6L Hybrid",
+      "horsepower": 225,
+      "description": "El Peugeot 308 ofrece un diseño audaz y un rendimiento híbrido eficiente, combinando deportividad y tecnología.",
+      "img": "https://example.com/images/peugeot_308_2024.jpg"
+    },
+    {
+      "model": "2008",
+      "year": 2024,
+      "type": "SUV",
+      "engine": "1.2L PureTech",
+      "horsepower": 130,
+      "description": "El Peugeot 2008 es un SUV compacto y versátil con un diseño robusto y moderno, perfecto para la ciudad y escapadas.",
+      "img": "https://example.com/images/peugeot_2008_2024.jpg"
+    },
+    {
+      "model": "3008",
+      "year": 2024,
+      "type": "SUV",
+      "engine": "1.6L Hybrid",
+      "horsepower": 225,
+      "description": "El Peugeot 3008 es un SUV de tamaño medio con un estilo sofisticado y una potente motorización híbrida.",
+      "img": "https://example.com/images/peugeot_3008_2024.jpg"
+    },
+    {
+      "model": "5008",
+      "year": 2024,
+      "type": "SUV",
+      "engine": "1.6L Hybrid",
+      "horsepower": 225,
+      "description": "El Peugeot 5008 es un SUV grande que ofrece amplio espacio y confort para familias, con opciones híbridas de última tecnología.",
+      "img": "https://example.com/images/peugeot_5008_2024.jpg"
+    },
+    {
+      "model": "508",
+      "year": 2024,
+      "type": "Sedan",
+      "engine": "1.6L Hybrid",
+      "horsepower": 225,
+      "description": "El Peugeot 508 es un sedán premium con líneas elegantes y un rendimiento híbrido eficiente para una conducción lujosa.",
+      "img": "https://example.com/images/peugeot_508_2024.jpg"
+    },
+    {
+      "model": "Rifter",
+      "year": 2023,
+      "type": "MPV",
+      "engine": "1.5L BlueHDi",
+      "horsepower": 130,
+      "description": "El Peugeot Rifter es un MPV versátil y espacioso, diseñado para ofrecer comodidad y funcionalidad en cualquier viaje.",
+      "img": "https://example.com/images/peugeot_rifter_2023.jpg"
+    }
+  ]
+  
