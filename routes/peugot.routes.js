@@ -1,11 +1,12 @@
 import { Router } from "express"
+import * as controllersPeugot from '../controller/peugot.controller.js'
 
 const route = Router()
 
 
-route.get('/peugot')
-route.get('/peugot/types/:type')
-route.get('/peugot/:id')
+route.get('/', controllersPeugot.getAutos)
+route.get('/types/:type')
+route.get('/:id', controllersPeugot.getAutoId)
 
 
 export default route
