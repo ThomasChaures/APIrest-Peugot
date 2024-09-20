@@ -75,5 +75,148 @@
     "description": "El Peugeot Rifter es un MPV versátil y espacioso, diseñado para ofrecer comodidad y funcionalidad en cualquier viaje.",
     "img": "https://example.com/images/peugeot_rifter_2023.jpg",
     "price_usd": 25000
+  },
+  {
+    "id": 8,
+    "model": "Expert",
+    "year": 2024,
+    "type": "Van",
+    "engine": "2.0L BlueHDi",
+    "horsepower": 180,
+    "description": "El Peugeot Expert es una furgoneta versátil y eficiente, ideal para el transporte de mercancías y pasajeros.",
+    "img": "https://example.com/images/peugeot_expert_2024.jpg",
+    "price_usd": 35000
+  },
+  {
+    "id": 9,
+    "model": "Partner",
+    "year": 2024,
+    "type": "Van",
+    "engine": "1.5L BlueHDi",
+    "horsepower": 130,
+    "description": "El Peugeot Partner es una furgoneta compacta, perfecta para negocios y familias que buscan espacio y funcionalidad.",
+    "img": "https://example.com/images/peugeot_partner_2024.jpg",
+    "price_usd": 30000
+  },
+  {
+    "id": 10,
+    "model": "208 GTi",
+    "year": 2024,
+    "type": "Hatchback",
+    "engine": "1.6L THP",
+    "horsepower": 208,
+    "description": "El Peugeot 208 GTi es un hatchback deportivo con un rendimiento excepcional y un diseño agresivo.",
+    "img": "https://example.com/images/peugeot_208_gti_2024.jpg",
+    "price_usd": 32000
+  },
+  {
+    "id": 11,
+    "model": "3008 GT",
+    "year": 2024,
+    "type": "SUV",
+    "engine": "1.6L Hybrid",
+    "horsepower": 225,
+    "description": "El Peugeot 3008 GT combina elegancia y tecnología, ofreciendo un rendimiento híbrido superior.",
+    "img": "https://example.com/images/peugeot_3008_gt_2024.jpg",
+    "price_usd": 40000
+  },
+  {
+    "id": 12,
+    "model": "508 SW",
+    "year": 2024,
+    "type": "Station Wagon",
+    "engine": "1.6L Hybrid",
+    "horsepower": 225,
+    "description": "El Peugeot 508 SW es un station wagon elegante con un amplio maletero y tecnologías avanzadas.",
+    "img": "https://example.com/images/peugeot_508_sw_2024.jpg",
+    "price_usd": 45000
+  },
+  {
+    "id": 13,
+    "model": "5008 GT",
+    "year": 2024,
+    "type": "SUV",
+    "engine": "1.6L Hybrid",
+    "horsepower": 225,
+    "description": "El Peugeot 5008 GT ofrece lujo y espacio, ideal para familias y viajes largos.",
+    "img": "https://example.com/images/peugeot_5008_gt_2024.jpg",
+    "price_usd": 48000
+  },
+  {
+    "id": 14,
+    "model": "208 Electric",
+    "year": 2024,
+    "type": "Hatchback",
+    "engine": "Electric",
+    "horsepower": 136,
+    "description": "El Peugeot 208 Electric combina eficiencia energética con un diseño urbano moderno.",
+    "img": "https://example.com/images/peugeot_208_electric_2024.jpg",
+    "price_usd": 25000
+  },
+  {
+    "id": 15,
+    "model": "3008 Plug-in Hybrid",
+    "year": 2024,
+    "type": "SUV",
+    "engine": "1.6L Hybrid",
+    "horsepower": 300,
+    "description": "El Peugeot 3008 Plug-in Hybrid ofrece versatilidad y eficiencia para la vida moderna.",
+    "img": "https://example.com/images/peugeot_3008_phybrid_2024.jpg",
+    "price_usd": 42000
+  },
+  {
+    "id": 16,
+    "model": "5008 Electric",
+    "year": 2024,
+    "type": "SUV",
+    "engine": "Electric",
+    "horsepower": 136,
+    "description": "El Peugeot 5008 Electric ofrece un espacio generoso y sostenibilidad en cada viaje.",
+    "img": "https://example.com/images/peugeot_5008_electric_2024.jpg",
+    "price_usd": 51000
+  },
+  {
+    "id": 17,
+    "model": "e-Partner",
+    "year": 2024,
+    "type": "Van",
+    "engine": "Electric",
+    "horsepower": 136,
+    "description": "El Peugeot e-Partner es una furgoneta eléctrica ideal para negocios sostenibles.",
+    "img": "https://example.com/images/peugeot_e_partner_2024.jpg",
+    "price_usd": 35000
+  },
+  {
+    "id": 18,
+    "model": "3008 Hybrid4",
+    "year": 2024,
+    "type": "SUV",
+    "engine": "2.0L Hybrid",
+    "horsepower": 300,
+    "description": "El Peugeot 3008 Hybrid4 combina potencia y eficiencia, perfecto para aventureros.",
+    "img": "https://example.com/images/peugeot_3008_hybrid4_2024.jpg",
+    "price_usd": 46000
+  },
+  {
+    "id": 19,
+    "model": "208 GTi by Peugeot Sport",
+    "year": 2024,
+    "type": "Hatchback",
+    "engine": "1.6L THP",
+    "horsepower": 208,
+    "description": "El Peugeot 208 GTi by Peugeot Sport es un modelo de alto rendimiento con un diseño deportivo.",
+    "img": "https://example.com/images/peugeot_208_gti_sport_2024.jpg",
+    "price_usd": 35000
+  },
+  {
+    "id": 20,
+    "model": "508 PSE",
+    "year": 2024,
+    "type": "Sedan",
+    "engine": "1.6L Hybrid",
+    "horsepower": 360,
+    "description": "El Peugeot 508 PSE es un sedán deportivo híbrido que combina potencia y lujo.",
+    "img": "https://example.com/images/peugeot_508_pse_2024.jpg",
+    "price_usd": 60000
   }
 ]

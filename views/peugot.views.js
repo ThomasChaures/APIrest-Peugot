@@ -45,7 +45,7 @@ export const crearPagina = (title, contenido) => {
       <main  class=" mx-auto" style="max-width: 1200px;">
       <h2 class="mb-5 mt-5">${title}</h2>
 
-      <section class="d-flex flex-wrap justify-content-start align-items-center mx-auto" style="max-width: 1200px;">
+      <section class="d-flex flex-wrap justify-content-start align-items-start mx-auto" style="max-width: 1200px;">
       ${contenido}
       </section>
       </main>
