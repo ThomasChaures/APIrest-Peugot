@@ -56,12 +56,12 @@ export const crearPagina = (title, contenido) => {
 };
 
 export const todosLosAutos = (autos) => {
-  let html = ''; 
-  for (let auto of autos) {  
-      html += `
+  let html = "";
+  for (let auto of autos) {
+    html += `
           <div class="card mx-2 my-4" style="width: 20rem;">
               
-                  <img class="card-img-top" src="../${auto.img}" alt="Imagen de ${auto.model}" />
+                  <img class="card-img-top"  src="/images.jpeg" alt="Imagen de ${auto.model}" />
                            
               <div class="card-body">
                <h2 class="card-title">${auto.model}</h2>
@@ -74,28 +74,27 @@ export const todosLosAutos = (autos) => {
       `;
   }
   return html;
-}
-
-
+};
 
 export const autoId = (auto) => {
   let html = `
           <div class="card mx-2 my-4" style="width: 20rem;">
               
-                  <img class="card-img-top" src="../${auto.img}" alt="Imagen de ${auto.model}" />
+                  <img class="card-img-top" src="/images.jpeg" alt="Imagen de ${auto.model}" />
                            
               <div class="card-body">
                <h2 class="card-title">${auto.model}</h2>
-                  <p class="card-text">Tipo: ${auto.type}</p>
-                  <p class="card-text">Descripcion: ${auto.description}</p>
-                  <p>Precio: $${auto.price_usd}</p>
+                   <p class="card-text"><strong>Año:</strong> ${auto.year} </p>
+                  <p class="card-text"><strong>Tipo:</strong> ${auto.type}</p>
+                    <p class="card-text"><strong>Motor:</strong> ${auto.engine} </p>
+                      <p class="card-text"><strong>Caballos de fuerza:</strong> ${auto.horsepower} </p>
+                  <p class="card-text"><strong>Descripcion:</strong> ${auto.description}</p>
+                 
+                    <p class="card-text"> </p>
+                  <p><strong>Precio:</strong> $${auto.price_usd}</p>
               </div>
-              <a  class="btn btn-primary" href="/${auto.id}">Ver más</a> 
           </div>
       `;
-  
+
   return html;
-}
-
-
-
+};

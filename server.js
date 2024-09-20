@@ -3,6 +3,7 @@ import autosRutas from './routes/peugot.routes.js'
 
 
 const app = express()
+app.use( express.static("img"))
 app.use( express.urlencoded({ extended: true }) )
 app.use(express.json())
 app.use(autosRutas)
