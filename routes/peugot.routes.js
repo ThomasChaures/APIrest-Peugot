@@ -5,7 +5,7 @@ const route = Router()
 
 
 route.get('/', controllersPeugot.getAutos)
-route.get('/types/:type')
+route.get('/types/:type'. controllersPeugot.getAutosByType)
 route.get('/:id', controllersPeugot.getAutoId)
 
 

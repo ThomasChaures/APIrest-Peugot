@@ -16,3 +16,12 @@ export const getAutoId = (req, res) => {
         })
         .catch((err) => console.log(err))
 }
+
+export const getAutosByType = (req, res) => {
+    service.getAutoByType(req.params.type)
+        .then(autos => {
+            res.send(views.crearPagina(`${req.params.type}`, views.todosLosAutos(autos)))
+        })
+        .catch((err) => console.log(err))
+}
+
