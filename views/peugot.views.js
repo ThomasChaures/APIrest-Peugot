@@ -24,17 +24,20 @@ export const crearPagina = (title, contenido) => {
           <a class="nav-link " href="/">Vehiculos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/types/hatchback">Hatchback</a>
+          <a class="nav-link" href="/types/Hatchback">Hatchback</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/types/suv">SUV</a>
+          <a class="nav-link" href="/types/SUV">SUV</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/types/sedan">Sedan</a>
+          <a class="nav-link" href="/types/Sedan">Sedan</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/types/mvp">MVP</a>
+          <a class="nav-link" href="/types/MPV">MPV</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/types/Van">Van</a>
         </li>
       </ul>
     </div>
@@ -42,10 +45,10 @@ export const crearPagina = (title, contenido) => {
 </nav>
        </header>
 
-      <main  class=" mx-auto" style="max-width: 1200px;">
+      <main  class="container mx-auto">
       <h2 class="mb-5 mt-5">${title}</h2>
 
-      <section class="d-flex flex-wrap justify-content-start align-items-start mx-auto" style="max-width: 1200px;">
+      <section class="d-flex flex-wrap justify-content-start align-items-start mx-auto" style="max-width: 1400px;">
       ${contenido}
       </section>
       </main>
@@ -59,17 +62,17 @@ export const todosLosAutos = (autos) => {
   let html = "";
   for (let auto of autos) {
     html += `
-          <div class="card mx-2 my-4" style="width: 20rem;">
+          <div class="card mx-2 my-4" style="width: 18rem;">
               
                   <img class="card-img-top"  src="/images.jpeg" alt="Imagen de ${auto.model}" />
                            
               <div class="card-body">
-               <h2 class="card-title">${auto.model}</h2>
-                  <p class="card-text">Tipo: ${auto.type}</p>
-                  <p class="card-text">Descripcion: ${auto.description}</p>
-                  <p>Precio: $${auto.price_usd}</p>
+               <h2 class="card-title fw-bold">${auto.model}</h2>
+                  <p class="card-text"><span class="fw-bold">Tipo:</span> ${auto.type}</p>
+                  <p class="card-text"><span class="fw-bold">Descripcion:</span> ${auto.description}</p>
+                  <p> <span class="fw-bold">Precio:</span> $${auto.price_usd}</p>
+                  <a  class="btn btn-primary" href="/${auto.id}">Ver más</a> 
               </div>
-              <a  class="btn btn-primary" href="/${auto.id}">Ver más</a> 
           </div>
       `;
   }
@@ -83,15 +86,15 @@ export const autoId = (auto) => {
                   <img class="card-img-top" src="/images.jpeg" alt="Imagen de ${auto.model}" />
                            
               <div class="card-body">
-               <h2 class="card-title">${auto.model}</h2>
-                   <p class="card-text"><strong>Año:</strong> ${auto.year} </p>
-                  <p class="card-text"><strong>Tipo:</strong> ${auto.type}</p>
-                    <p class="card-text"><strong>Motor:</strong> ${auto.engine} </p>
-                      <p class="card-text"><strong>Caballos de fuerza:</strong> ${auto.horsepower} </p>
-                  <p class="card-text"><strong>Descripcion:</strong> ${auto.description}</p>
+               <h2 class="card-title fw-bold">${auto.model}</h2>
+                   <p class="card-text"><span class="fw-bold">Año:</span> ${auto.year} </p>
+                  <p class="card-text"><span class="fw-bold">Tipo:</span> ${auto.type}</p>
+                    <p class="card-text"><span class="fw-bold">Motor:</span> ${auto.engine} </p>
+                      <p class="card-text"><span class="fw-bold">Caballos de fuerza:</span> ${auto.horsepower} </p>
+                  <p class="card-text"><span class="fw-bold">Descripcion:</span> ${auto.description}</p>
                  
                     <p class="card-text"> </p>
-                  <p><strong>Precio:</strong> $${auto.price_usd}</p>
+                  <p><span class="fw-bold">Precio:</span> $${auto.price_usd}</p>
               </div>
           </div>
       `;

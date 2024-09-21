@@ -17,11 +17,14 @@ export const getAutoId = (req, res) => {
         .catch((err) => console.log(err))
 }
 
-export const getAutosByType = (req, res) => {
+export const getAutoByType = (req, res) => {
     service.getAutoByType(req.params.type)
         .then(autos => {
-            res.send(views.crearPagina(`${req.params.type}`, views.todosLosAutos(autos)))
+            res.send(views.crearPagina(`${req.params.type}`, views.todosLosAutos(autos)));
         })
-        .catch((err) => console.log(err))
-}
+        .catch(err => {
+            console.log(err);
+            res.status(500).send("Error al obtener los autos");
+        });
+};
 
