@@ -70,7 +70,7 @@ export const eliminadoLogico = async (id) => {
 export const remplazarAuto = async (id, autoModificado) => {
     return getAutos(true)
         .then( async autos => {
-            let autoRemplazo = nullconst 
+            let autoRemplazo = null
             const autosActualizados = autos.map( auto => {
                 if(auto.id == id){
                     autoRemplazo = { 
@@ -78,6 +78,32 @@ export const remplazarAuto = async (id, autoModificado) => {
                         ...autoModificado
                     }
                     return autoModificado
+                } else {
+                    return auto
+                }
+            })
+            await writeFile("./data/catalogo.json", JSON.stringify(autosActualizados))
+        })
+        .catch((err) => console.log(err))
+}
+
+const actualizarAuto = async (id, autoActualizado) => {
+    return getAutos(true)
+        .then( async autos => {
+            let autoRemplazo = null
+            const autosActualizados = autos.map( auto => {
+                if(auto.id == id){
+                    autoRemplazo = { 
+                        id: id,
+                        model: autoActualizado.model ? autoActualizado.model : auto.model,
+                        year: autoActualizado.year ? autoActualizado.year : auto.year,
+                        type: autoActualizado.type ? autoActualizado.type : auto.type,
+                        engine: autoActualizado.engine ? autoActualizado.engine : auto.engine,
+                        horsepower: autoActualizado.horsepower ? autoActualizado.horsepower : auto.horsepower,
+                        description: autoActualizado.description ? autoActualizado.description : auto.description,
+                        price_usd: autoActualizado.price_usd ? autoActualizado.price_usd : auto.price_usd,
+                    }
+                    return autoRemplazo
                 } else {
                     return auto
                 }
