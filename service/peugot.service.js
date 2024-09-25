@@ -87,7 +87,7 @@ export const remplazarAuto = async (id, autoModificado) => {
         .catch((err) => console.log(err))
 }
 
-const actualizarAuto = async (id, autoActualizado) => {
+export const actualizarAuto = async (id, autoActualizado) => {
     return getAutos(true)
         .then( async autos => {
             let autoRemplazo = null
