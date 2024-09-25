@@ -24,7 +24,7 @@ export const getAutoId = async (id) => {
 export const getAutoByType = async (type) => {
     return getAutos()
         .then(autos => {
-            return autos.filter(autosType => autosType.type === type);
+            return autos.filter(autosType => autosType.type === type) || [];
         })
         .catch(err => {
             console.log(err);
