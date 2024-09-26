@@ -71,7 +71,7 @@ export const todosLosAutos = (autos) => {
                   <p class="card-text"><span class="fw-bold">Tipo:</span> ${auto.type}</p>
                   <p class="card-text"><span class="fw-bold">Descripcion:</span> ${auto.description}</p>
                   <p> <span class="fw-bold">Precio:</span> $${auto.price_usd}</p>
-                  <a  class="btn btn-primary" href="/${auto.id}">Ver más</a> 
+                  <a  class="btn btn-primary" href="/${auto._id}">Ver más</a> 
               </div>
           </div>
       `;

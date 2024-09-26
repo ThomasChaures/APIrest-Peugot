@@ -1,25 +1,21 @@
 import { readFile, writeFile } from 'fs/promises';
 import { resolve } from 'path';
+import { MongoClient, ObjectId } from "mongodb"
+
+const cliente = new MongoClient('mongodb://localhost:27017')
+const db = cliente.db("Peugot")
+
 
 export const getAutos = async (eliminados = false) => {
-    return await readFile(resolve("data/catalogo.json"), { encoding: 'utf8' })
-        .then((autos) =>{
-            
-          return  eliminados ? JSON.parse(autos) : JSON.parse(autos).filter(auto => !auto.eliminado) 
-           
-        })
-        .catch((err) => console.log(err));
+
+    await cliente.connect()
+        return db.collection("Autos").find({"eliminado": {"$ne": !eliminados}}).toArray()
 }
 
 export const getAutoId = async (id) => {
-    return getAutos()
-        .then(autos => {
-            return autos.find(auto => auto.id == id) ||[]
-        }) 
-        .catch(err => {
-            console.log(err);
-            throw err; 
-        });
+    await cliente.connect()
+        const datos = await db.collection("Autos").findOne({_id: ObjectId.createFromHexString(id)})
+        return datos
 }
 export const getAutoByType = async (type) => {
     return getAutos()
@@ -33,17 +29,20 @@ export const getAutoByType = async (type) => {
 };
 
 export const agregarAuto = async (auto) => {
-     return getAutos(true)
-        .then(async autos => {
-            const nuevoAuto = {
-                id: autos.length + 1,
-                ...auto
-            }
-        autos.push(nuevoAuto)
-        await writeFile("./data/catalogo.json", JSON.stringify(autos))
-        return nuevoAuto
-        })
-        .catch((err) => console.log(err))
+    await cliente.connect()
+    await db.collection("Autos").insertOne(auto)    
+    return auto
+//      return getAutos(true)
+//         .then(async autos => {
+//             const nuevoAuto = {
+//                 id: autos.length + 1,
+//                 ...auto
+//             }
+//         autos.push(nuevoAuto)
+//         await writeFile("./data/catalogo.json", JSON.stringify(autos))
+//         return nuevoAuto
+//         })
+//         .catch((err) => console.log(err))
 }
 
 
@@ -68,26 +67,30 @@ export const eliminadoLogico = async (id) => {
 
 
 export const remplazarAuto = async (id, autoModificado) => {
-    return getAutos(true)
-        .then( async autos => {
-            let autoRemplazo = null
-            const autosActualizados = autos.map( auto => {
-                if(auto.id == id){
-                    autoRemplazo = { 
-                        id: id,
-                        ...autoModificado
-                    }
-                    return autoModificado
-                } else {
-                    return auto
-                }
-            })
-            await writeFile("./data/catalogo.json", JSON.stringify(autosActualizados))
-        })
-        .catch((err) => console.log(err))
+
+    await cliente.connect()
+    await db.collection('Autos').replaceOne({_id: ObjectId.createFromHexString(id)}, peliculaRemplazada)
+    return peliculaRemplazada
+    // return getAutos(true)
+    //     .then( async autos => {
+    //         let autoRemplazo = null
+    //         const autosActualizados = autos.map( auto => {
+    //             if(auto.id == id){
+    //                 autoRemplazo = { 
+    //                     id: id,
+    //                     ...autoModificado
+    //                 }
+    //                 return autoModificado
+    //             } else {
+    //                 return auto
+    //             }
+    //         })
+    //         await writeFile("./data/catalogo.json", JSON.stringify(autosActualizados))
+    //     })
+    //     .catch((err) => console.log(err))
 }
 
-const actualizarAuto = async (id, autoActualizado) => {
+export const actualizarAuto = async (id, autoActualizado) => {
     return getAutos(true)
         .then( async autos => {
             let autoRemplazo = null
