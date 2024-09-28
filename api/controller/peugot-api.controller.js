@@ -10,7 +10,8 @@ export const getAutos = (req, res) => {
 }
 
 export const getAutoId = (req, res) =>{
-    service.getAutoId(req.params.id)
+    const id = req.params.id
+    service.getAutoId(id)
         .then(auto => {
             res.status(200).json(auto)
         })
@@ -47,4 +48,8 @@ export const eliminadoLogico = (req, res) => {
     service.eliminadoLogico(req.params.id)
            .then((id) => res.status(202).json({id: id}))
            .catch((err) => console.log(err))
+}
+
+export const getAutosByVendedor = (req, res) => {
+    
 }
