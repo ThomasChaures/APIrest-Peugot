@@ -64,7 +64,7 @@ export const todosLosAutos = (autos) => {
     html += `
           <div class="card mx-2 my-4" style="width: 18rem;">
               
-                  <img class="card-img-top"  src="/${auto.img} alt="Imagen de ${auto.model}" />
+                  <img class="card-img-top"  src="/${auto.img}" alt="Imagen de ${auto.model}" />
                            
               <div class="card-body">
                <h2 class="card-title fw-bold">${auto.model}</h2>
@@ -77,7 +77,7 @@ export const todosLosAutos = (autos) => {
     html += `
                   <p class="card-text"><span class="fw-bold">Descripcion:</span> ${auto.description}</p>
                   <p> <span class="fw-bold">Precio:</span> $${auto.price_usd}</p>
-                  <a  href="${auto.link}">Link</a>
+                  
                   <a  class="btn btn-primary" href="/${auto._id}">Ver más</a> 
               </div>
           </div>
@@ -99,8 +99,13 @@ export const autoId = (auto) => {
                     <p class="card-text"><span class="fw-bold">Motor:</span> ${auto.engine} </p>
                       <p class="card-text"><span class="fw-bold">Caballos de fuerza:</span> ${auto.horsepower} </p>
                   <p class="card-text"><span class="fw-bold">Descripcion:</span> ${auto.description}</p>
-                 
+                    <a  href="${auto.link}">Video demostrativo</a>
                     <p class="card-text"> </p>
+                    `;
+                    if (auto.vendedor) {
+                      html += `<p class="card-text"><span class="fw-bold">Vendedor:</span> ${auto.vendedor}</p>`;
+                    }
+                   html+= `
                   <p><span class="fw-bold">Precio:</span> $${auto.price_usd}</p>
               </div>
           </div>

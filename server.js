@@ -10,4 +10,4 @@ app.use(express.json())
 app.use(autosRutas)
 app.use('/api',apiAutosRutas)
 
-app.listen(2024, () => console.log('Server Funcando'))
+app.listen(3333, () => console.log('Server Funcando'))
