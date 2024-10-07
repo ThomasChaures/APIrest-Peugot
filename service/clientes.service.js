@@ -1,6 +1,6 @@
 import { MongoClient, ObjectId } from "mongodb";
 
-const cliente = new MongoClient("mongodb://localhost:27017");
+const cliente = new MongoClient("mongodb+srv://admin:admin@dwt4av-hibridas-cluster.boucf.mongodb.net/");
 const db = cliente.db("AH20232CP1");
 
 export const getClienteApi = async () => {

@@ -1,7 +1,7 @@
 import { MongoClient, ObjectId } from "mongodb";
 import * as serviceVendedores from "./clientes.service.js";
 
-const cliente = new MongoClient("mongodb://localhost:27017");
+const cliente = new MongoClient("mongodb+srv://admin:admin@dwt4av-hibridas-cluster.boucf.mongodb.net/");
 const db = cliente.db("AH20232CP1");
 
 export const getAutos = async (filtros = {}) => {
