@@ -8,7 +8,12 @@ const app = express();
 app.use(express.static("img"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+
+const corsOptions = {
+    origin: "http://localhost:5173",
+    methods: "GET, POST, PUT, DELETE"
+}
+app.use(cors(corsOptions));
 
 app.use(autosRutas);
 app.use("/api", apiAutosRutas);
