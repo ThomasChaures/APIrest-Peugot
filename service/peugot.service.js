@@ -1,5 +1,5 @@
 import { MongoClient, ObjectId } from "mongodb";
-import * as serviceVendedores from "./clientes.service.js";
+import * as serviceVendedores from "./vendedores.service.js";
 
 const cliente = new MongoClient("mongodb+srv://admin:admin@dwt4av-hibridas-cluster.boucf.mongodb.net/");
 const db = cliente.db("AH20232CP1");

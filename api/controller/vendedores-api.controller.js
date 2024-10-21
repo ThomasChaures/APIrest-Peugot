@@ -1,4 +1,4 @@
-import * as service from "../../service/clientes.service.js";
+import * as service from "../../service/vendedores.service.js";
 
 export const getVendedores = (req, res) => {
   service
