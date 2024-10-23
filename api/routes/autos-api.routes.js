@@ -1,5 +1,5 @@
 import { Router } from "express";
-import * as controllersPeugot from "../controller/peugot-api.controller.js";
+import * as controllersPeugot from "../controller/autos-api.controller.js";
 import { validateAuto } from "../../middleware/auto.validate.middleware.js"
 const route = Router();
 

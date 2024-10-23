@@ -1,43 +1,43 @@
 import { MongoClient, ObjectId } from "mongodb";
 import * as serviceVendedores from "./vendedores.service.js";
 
-const cliente = new MongoClient("mongodb+srv://admin:admin@dwt4av-hibridas-cluster.boucf.mongodb.net/");
+const cliente = new MongoClient(
+  "mongodb+srv://admin:admin@dwt4av-hibridas-cluster.boucf.mongodb.net/"
+);
 const db = cliente.db("AH20232CP1");
 
 export const getAutos = async (filtros = {}) => {
-  const filterMongo = {eliminado: {$ne: true}}
+  const filterMongo = { eliminado: { $ne: true } };
   if (filtros.year !== undefined) {
-    filterMongo.year = { $eq: parseInt(filtros.year)};
+    filterMongo.year = { $eq: parseInt(filtros.year) };
   }
 
-  if(filtros.horsepower !== undefined){
-    filterMongo.horsepower = {$eq: parseInt(filtros.horsepower)}
-  }
-  
-
- if (filtros.precioMinimo !== undefined || filtros.preciMaximo !== undefined) {
-  filterMongo.$and = [];
-
-  if (filtros.precioMinimo !== undefined) {
-    filterMongo.$and.push({ price_usd: { $gt: parseInt(filtros.precioMinimo) } });
+  if (filtros.horsepower !== undefined) {
+    filterMongo.horsepower = { $eq: parseInt(filtros.horsepower) };
   }
 
-  if (filtros.precioMaximo !== undefined) {
-    filterMongo.$and.push({ price_usd: { $lt: parseInt(filtros.precioMaximo) } });
+  if (filtros.precioMinimo !== undefined || filtros.preciMaximo !== undefined) {
+    filterMongo.$and = [];
+
+    if (filtros.precioMinimo !== undefined) {
+      filterMongo.$and.push({
+        price_usd: { $gt: parseInt(filtros.precioMinimo) },
+      });
+    }
+
+    if (filtros.precioMaximo !== undefined) {
+      filterMongo.$and.push({
+        price_usd: { $lt: parseInt(filtros.precioMaximo) },
+      });
+    }
   }
-}
 
-
-  if(filtros.description !== undefined){
-      filterMongo.$text = {$search: filtros.description}
+  if (filtros.description !== undefined) {
+    filterMongo.$text = { $search: filtros.description };
   }
-
 
   await cliente.connect();
-  return db
-    .collection("Autos")
-    .find(filterMongo)
-    .toArray();
+  return db.collection("Autos").find(filterMongo).toArray();
 };
 
 export const getAutoId = async (id) => {
@@ -53,7 +53,7 @@ export const getAutosByVendedor = async (vendedor) => {
 
   const carros = await serviceVendedores.getAutosDelVendedor(vendedor);
 
-  console.log(carros)
+  console.log(carros);
 
   const autos = await db
     .collection("Autos")
@@ -130,3 +130,5 @@ export const actualizarAuto = async (id, autoActualizado) => {
     );
   return autoUpdate;
 };
+
+

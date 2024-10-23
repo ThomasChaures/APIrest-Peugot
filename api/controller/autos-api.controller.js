@@ -1,4 +1,4 @@
-import * as service from "../../service/peugot.service.js";
+import * as service from "../../service/auto.service.js";
 
 export const getAutos = (req, res) => {
   const filtros = req.query;

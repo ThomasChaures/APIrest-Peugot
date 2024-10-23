@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ThomasChaures/APIrest-Peugot#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
     "express": "^4.21.0",
