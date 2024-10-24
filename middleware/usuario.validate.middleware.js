@@ -1,11 +1,24 @@
-import { usuarioSchema } from "../schemas/usuarios.validate.js"
+import { loginSchema, usuarioSchema } from "../schemas/usuarios.validate.js"
 
-export function validateUser(req, res, next) {
-    usuarioSchema.validate(req.body, {abortEarly: false, stripUnknown: true}) // devuelve una promesa
-    .then(() => { 
+export async function validateUser(req, res, next) {
+    try{
+        const datosValidados = await usuarioSchema.validate(req.body, {abortEarly: false, stripUnknown: true})
+        req.body = datosValidados
         next(); 
-    })
-    .catch((err) => {
-        res.status(400).json({ message: err.errors }); // 400 is more appropriate for validation errors
-    });
+    
+    }catch(error){
+        res.status(400).json({ message: error.errors }); 
+    } 
+}
+
+
+
+export async function login(req, res, next) {
+    try{
+        const datosValidados = await loginSchema.validate(req.body, {abortEarly: false, stripUnknown: true})
+        req.body = datosValidados
+        next()
+    }catch(error){
+        res.status(400).json({ message: error.errors });
+    }
 }

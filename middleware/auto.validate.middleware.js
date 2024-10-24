@@ -1,11 +1,14 @@
-import { autoSchema } from "../schemas/autos.validate.js"
+import { autoSchema } from "../schemas/autos.validate.js";
 
-export function validateAuto(req, res, next) {
-    autoSchema.validate(req.body, {abortEarly: false, stripUnknown: true}) // devuelve una promesa
-    .then(() => { 
-        next(); 
-    })
-    .catch((err) => {
-        res.status(400).json({ message: err.errors }); // 400 is more appropriate for validation errors
+export async function validateAuto(req, res, next) {
+  try {
+    const datosValidados = await autoSchema.validate(req.body, {
+      abortEarly: false,
+      stripUnknown: true,
     });
+    req.body = datosValidados;
+    next();
+  } catch (error) {
+    res.status(400).json({ message: error.errors });
+  }
 }
